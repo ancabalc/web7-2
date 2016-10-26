@@ -1,8 +1,5 @@
 <?php
 
-// echo "<pre>";
-// print_r($_SERVER);
-
 // START SESSION FOR APP
 session_start();
 
@@ -10,12 +7,13 @@ session_start();
 require "helpers/functions.php";
 
 // APP routes (URI)
+$routes = [];
 // $routes["/articles"] = array("controller" => "Articles",
 //                                 "method" => "index");
                             
 
-if (isset($_SERVER["PATH_INFO"])) {
-    $key = rtrim($_SERVER['PATH_INFO'], '/');
+if (isset($_SERVER["REDIRECT_URL"])) {
+    $key = rtrim($_SERVER['REDIRECT_URL'], '/');
     //$key = $_SERVER["PATH_INFO"];
     if (array_key_exists($key, $routes)) {
         require "api/controllers" . $routes[$key]["controller"] . ".php"; 
