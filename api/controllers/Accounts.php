@@ -1,6 +1,6 @@
 <?php
 
-class Account {
+class Accounts {
     function create(){
         
     }
