@@ -1,6 +1,6 @@
 <?php
 
-class Account extends DB {
+class Account {
     function create(){
         
     }
