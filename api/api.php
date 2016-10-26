@@ -1,22 +1,18 @@
 <?php
 
-// START SESSION FOR APP
 session_start();
 
-// Include helpers functions
 require "helpers/functions.php";
 
-// APP routes (URI)
 $routes = [];
-// $routes["/articles"] = array("controller" => "Articles",
-//                                 "method" => "index");
-                            
+$routes["/api/accounts/login"] = array("controller" => "Accounts",
+                                "method" => "login");
 
 if (isset($_SERVER["REDIRECT_URL"])) {
     $key = rtrim($_SERVER['REDIRECT_URL'], '/');
-    //$key = $_SERVER["PATH_INFO"];
+    //$key = $_SERVER["REDIRECT_URL"];
     if (array_key_exists($key, $routes)) {
-        require "api/controllers" . $routes[$key]["controller"] . ".php"; 
+        require "controllers/" . $routes[$key]["controller"] . ".php"; 
         $controller = new $routes[$key]["controller"]();
         $response = $controller->$routes[$key]["method"]();
    
@@ -30,5 +26,3 @@ if (isset($_SERVER["REDIRECT_URL"])) {
 else {
     api_response(array("error"=>"Access Forbidden"), 403);
 }
-                                
-
