@@ -7,7 +7,8 @@ require "helpers/functions.php";
 $routes = [];
 $routes["/api/accounts/login"] = array("controller" => "Accounts",
                                 "method" => "login");
-
+$routes["/api/users/update"] =  array("controller" => "Users",
+                                "method" => "updateUsers");
 if (isset($_SERVER["REDIRECT_URL"])) {
     $key = rtrim($_SERVER['REDIRECT_URL'], '/');
     //$key = $_SERVER["REDIRECT_URL"];
