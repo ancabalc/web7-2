@@ -37,7 +37,7 @@ class Users {
     }
     
     public function listUsers () {
-        $listUsersModel = new UsersModels();
+        $listUsersModel = new UsersModel();
         $response = $listUsersModel->listUsers();
         return $response;
     }
