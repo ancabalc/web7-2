@@ -35,4 +35,10 @@ class Users {
                     return $response;
                 }
     }
+    
+    public function listUsers () {
+        $listUsersModel = new UsersModels();
+        $response = $listUsersModel->listUsers();
+        return $response;
+    }
 }

@@ -14,4 +14,12 @@ class UsersModel extends DB{
         $sth = $this->dbh->prepare($sql);
         return $sth->execute($params); 
     }
+    
+    
+      function listUsers() {
+        $sql = "SELECT name, description, image FROM users";
+        $sth = $this ->dbh -> prepare($sql);
+        $sth -> execute();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+      }
 }
