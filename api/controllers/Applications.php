@@ -1,14 +1,6 @@
 <?php
 
-<<<<<<< HEAD
 require "models/ApplicationsModel.php";
-
-
-class Applications {
-    
-    
-=======
-require "api/models/ApplicationsModels.php";
 
 class Applications {
     function create(){
@@ -25,7 +17,6 @@ class Applications {
         echo $result['appTitle'];
         echo $result['appDescription'];
     }
->>>>>>> 46eb4a0e6abc181ec05aef407fc28f93ff734d66
     function listApplications() {
      
         if (isset($_GET["id"])) {
