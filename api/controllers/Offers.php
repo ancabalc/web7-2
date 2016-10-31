@@ -14,15 +14,15 @@ class Offers {
             if (empty($_POST["application_id"])) {
                 $errors["application_id"] = " Application Id is invalid";   
             };
-            if (empty($_POST["application_id"])) {
+            if (empty($_POST["user_id"])) {
                 $errors["user_id"] = " User Id invalid";   
             };
             if (empty($errors)) {
                 $offersModel = new OffersModel();
                 $id = $offersModel -> createOffers($_POST);
                 return array("id" =>$id);
-           
-       }
+           }
+       return array("errors" => $errors);
     }
     function listOffers() {
         $offersModel = new OffersModel();
