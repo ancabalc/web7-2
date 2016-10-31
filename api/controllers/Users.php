@@ -1,5 +1,5 @@
 <?php
- require "models/UsersModels.php";
+  require "models/UsersModels.php";
 class Users {
     public function updateUsers(){
           $errors = array();
@@ -36,11 +36,12 @@ class Users {
              }       
              
          }  
-                // else {
-                //   $response = array("error"=>"An error occured");  
-                //   return $response;
-                // }
+                else {
+                   $response = array("error"=>"An error occured");  
+                   return $response;
+                }
                 return array("errors" => $errors);
+
          }
     
     public function listUsers () {
