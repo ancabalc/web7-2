@@ -18,9 +18,14 @@ $routes["/api/users/update"] =  array("controller" => "Users",
                                 "method" => "updateUsers");
 $routes["/api/users/listUsers"] = array("controller" => "Users",
                                 "method" => "listUsers");  
+<<<<<<< HEAD
 $routes["/api/offers/create"] = array("controller" => "Offers",
                                 "method" => "createOffers");  
 
+=======
+$routes["/api/applications/listApplications"] = array("controller" => "Applications",
+                                "method" => "listApplications");
+>>>>>>> 05a87fb581424926a680627db5cae5cd58992cfa
 if (isset($_SERVER["REDIRECT_URL"])) {
     $key = rtrim($_SERVER['REDIRECT_URL'], '/');
     //$key = $_SERVER["REDIRECT_URL"];

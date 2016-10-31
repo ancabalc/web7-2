@@ -1,6 +1,6 @@
 <?php
 
-require "api/models/ApplicationsModels.php";
+require "models/ApplicationsModel.php";
 
 class Applications {
     function create(){
@@ -18,7 +18,13 @@ class Applications {
         echo $result['appDescription'];
     }
     function listApplications() {
-        
-      
-    }
+     
+        if (isset($_GET["id"])) {
+            $applicationsModel = new ApplicationsModel();
+            $response = $applicationsModel->getAll($_GET["id"]);
+            return $response;
+        } 
+        }  
 }
+      
+    
