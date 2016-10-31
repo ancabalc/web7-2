@@ -8,6 +8,8 @@ $routes = [];
 
 $routes["/api/applications/create"] = array("controller" =>"Applications",
                                       "method" => "create");
+$routes["/api/accounts/create"] = array("controller" => "Accounts",
+                                "method" => "create");
 $routes["/api/accounts/login"] = array("controller" => "Accounts",
                                 "method" => "login");
 $routes["/api/accounts/login"] = array("controller" => "Login",
