@@ -1,6 +1,7 @@
 <?php
   require "models/UsersModels.php";
 class Users {
+
     public function updateUsers(){
           $errors = array();
                   
@@ -20,6 +21,7 @@ class Users {
                          $errors['image'] = 'Image is required';
                     }
             if(empty($errors)){
+
              $_POST['image'] = '';
              if(isset($_FILES["image"])){
                  $file=$_FILES["image"];
