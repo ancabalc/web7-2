@@ -1,5 +1,5 @@
 <?php
-  require "models/UsersModels.php";
+ require "models/UsersModels.php";
 class Users {
     public function updateUsers(){
           $errors = array();
@@ -16,7 +16,7 @@ class Users {
                         $errors['description'] = 'Description is required';
                         
                     }
-                    if(empty($_POST["image"])){
+                    if(empty($_FILES["image"])){
                          $errors['image'] = 'Image is required';
                     }
             if(empty($errors)){
@@ -30,17 +30,17 @@ class Users {
                 $row = $usersModel->updateUsers($_POST);
                 if ($row) {
                     $response = array("success"=>TRUE);  
+                    return $response;
                 }
          
              }       
              
          }  
-                else {
-                   $response = array("error"=>"An error occured");  
-                   return $response;
-                }
+                // else {
+                //   $response = array("error"=>"An error occured");  
+                //   return $response;
+                // }
                 return array("errors" => $errors);
-
          }
     
     public function listUsers () {

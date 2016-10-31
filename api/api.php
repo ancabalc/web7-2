@@ -21,8 +21,10 @@ $routes["/api/users/listUsers"] = array("controller" => "Users",
 $routes["/api/offers/create"] = array("controller" => "Offers",
                                 "method" => "createOffers");  
 
+
 $routes["/api/applications/listApplications"] = array("controller" => "Applications",
                                 "method" => "listApplications");
+
 if (isset($_SERVER["REDIRECT_URL"])) {
     $key = rtrim($_SERVER['REDIRECT_URL'], '/');
     //$key = $_SERVER["REDIRECT_URL"];
