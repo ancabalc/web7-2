@@ -9,7 +9,8 @@ class UsersModel extends DB{
                     ':role' => $user["role"]];
         $sql = 'INSERT INTO users(name, email, password, role) VALUES (:name, :email, :password, :role)';
         $sth = $this->dbh->prepare($sql);
-        return $sth->execute($params);
+        $sth->execute($params);
+        return $this->dbh->lastInsertId();
     }
     
       function updateUsers($data) {
