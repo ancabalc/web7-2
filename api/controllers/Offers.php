@@ -7,10 +7,20 @@ class Offers {
         //  $response = validate_request();
         //  if ($response['error']) return $response;
         
-         if (!empty($_POST["description"])){
-           $offersModel = new OffersModel();
-           $id = $offersModel -> createOffers($_POST);
-           return array("id" =>$id);
+         $errors = array();
+            if (empty($_POST["description"])) {
+                $errors["description"] = " Add a description to your offer!";   
+            };
+            if (empty($_POST["application_id"])) {
+                $errors["application_id"] = " Application Id is invalid";   
+            };
+            if (empty($_POST["application_id"])) {
+                $errors["user_id"] = " User Id invalid";   
+            };
+            if (empty($errors)) {
+                $offersModel = new OffersModel();
+                $id = $offersModel -> createOffers($_POST);
+                return array("id" =>$id);
            
        }
     }
