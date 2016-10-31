@@ -10,7 +10,9 @@ $routes["/api/accounts/login"] = array("controller" => "Accounts",
 $routes["/api/users/update"] =  array("controller" => "Users",
                                 "method" => "updateUsers");
 $routes["/api/users/listUsers"] = array("controller" => "Users",
-                                "method" => "listUsers");                                
+                                "method" => "listUsers");  
+$routes["/api/applications/listApplications"] = array("controller" => "Applications",
+                                "method" => "listApplications");
 if (isset($_SERVER["REDIRECT_URL"])) {
     $key = rtrim($_SERVER['REDIRECT_URL'], '/');
     //$key = $_SERVER["REDIRECT_URL"];
