@@ -1,7 +1,8 @@
 <?php
 require "../api/models/UsersModels.php";
 class Users {
-    public function updateUsers(){
+    
+        public function updateUsers(){
          if (isset($_POST["id"]) && isset($_POST["name"]) && isset($_POST["description"])) {
              $_POST['image'] = '';
              if(isset($_FILES["image"])){
@@ -37,8 +38,11 @@ class Users {
     }
     
     public function listUsers () {
+        $limit = empty($_GET['items']) ? 0 : $_GET['items'];
         $listUsersModel = new UsersModel();
-        $response = $listUsersModel->listUsers();
+        $response = $listUsersModel->listUsers($limit);
         return $response;
+        
     }
+    
 }

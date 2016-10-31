@@ -24,8 +24,11 @@ class UsersModel extends DB{
     }
     
     
-      function listUsers() {
-        $sql = "SELECT name, description, image FROM users";
+      function listUsers($limit = 0) {
+        $sql = 'SELECT name, description, image FROM users ORDER BY id DESC';
+        if ($limit > 0) {
+          $sql .= ' LIMIT ' . $limit;
+        }
         $sth = $this ->dbh -> prepare($sql);
         $sth -> execute();
         return $sth->fetchAll(PDO::FETCH_ASSOC);
