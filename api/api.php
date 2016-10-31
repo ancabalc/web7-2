@@ -5,13 +5,9 @@ session_start();
 require "helpers/functions.php";
 
 $routes = [];
-<<<<<<< Updated upstream
-$routes["/api/accounts/create"] = array("controller" => "Accounts",
-                                "method" => "create");
-=======
+
 $routes["/api/applications/create"] = array("controller" =>"Applications",
                                       "method" => "create");
->>>>>>> Stashed changes
 $routes["/api/accounts/login"] = array("controller" => "Accounts",
                                 "method" => "login");
 $routes["/api/accounts/login"] = array("controller" => "Login",
