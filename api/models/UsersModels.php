@@ -22,9 +22,7 @@ class UsersModel extends DB{
         $sth -> execute();
         return $sth->fetchAll(PDO::FETCH_ASSOC);
       }
-}
 
-class UsersModel extends DB {
     function loginUser($email) {
         
         $params = [':email' => $email];
@@ -35,4 +33,4 @@ class UsersModel extends DB {
        
         return $sth->fetch(PDO::FETCH_ASSOC);
     }
-}
+    }
