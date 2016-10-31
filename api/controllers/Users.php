@@ -1,6 +1,11 @@
 <?php
   require "models/UsersModels.php";
 class Users {
+<<<<<<< HEAD
+    
+        public function updateUsers(){
+         if (isset($_POST["id"]) && isset($_POST["name"]) && isset($_POST["description"])) {
+=======
     public function updateUsers(){
           $errors = array();
                   
@@ -20,6 +25,7 @@ class Users {
                          $errors['image'] = 'Image is required';
                     }
             if(empty($errors)){
+>>>>>>> 090d8e055b982e0adb1b87e8d02b8d22e6d4c60b
              $_POST['image'] = '';
              if(isset($_FILES["image"])){
                  $file=$_FILES["image"];
@@ -45,8 +51,11 @@ class Users {
          }
     
     public function listUsers () {
+        $limit = empty($_GET['items']) ? 0 : $_GET['items'];
         $listUsersModel = new UsersModel();
-        $response = $listUsersModel->listUsers();
+        $response = $listUsersModel->listUsers($limit);
         return $response;
+        
     }
+    
 }
