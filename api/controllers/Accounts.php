@@ -31,9 +31,12 @@ class Accounts {
             
             if (empty($errors)) {
                 $_POST["password"] = password_hash($_POST["password"], PASSWORD_DEFAULT);
-                require "../api/models/UsersModels.php";
+                require "models/UsersModels.php";
                 $usersModel = new UsersModel();
                 $user = $usersModel->createUser($_POST);
+                if ($user === 0) {
+                    $errors["request"] = "Invalid request"; 
+                } 
             }
         
         return array("errors" => $errors);
