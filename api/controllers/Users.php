@@ -16,7 +16,7 @@ class Users {
                         $errors['description'] = 'Description is required';
                         
                     }
-                    if(empty($_POST["image"])){
+                    if(empty($_FILES["image"])){
                          $errors['image'] = 'Image is required';
                     }
             if(empty($errors)){
