@@ -4,19 +4,31 @@ require "models/ApplicationsModel.php";
 
 class Applications {
     function create(){
-        $applicationsModels = new ApplicationsModels();
-        return $applicationsModels->createApplications();
-    }
-    function validateApplications() {
-        $appTitle = mysql_query("SELECT title FROM applications WHERE id = 1");
-        $result = mysql_fetch_array($appTitle);
         
-        $appDescription = mysql_query("SELECT description FROM applications WHERE id = 1");
-        $result = mysql_fetch_array($appDescription);
+        $errors = array();
         
-        echo $result['appTitle'];
-        echo $result['appDescription'];
+        if (empty($_POST["title"])) {
+            $errors["title"] = "Title is required";
+        } 
+        if (empty($_POST["description"])) {
+            $errors["description"] = "Description is required";
+        }
+        if (empty($_POST["active"])) {
+            $errors["active"] = "Active is required";
+        }
+        
+        if(empty($errors)) {
+            $applicationsModels = new ApplicationsModels();
+            $applicationId = $applicationsModels->createApplications($_POST);
+            if ($applicationId) {
+                return $applicationId; 
+            }
+        } else {
+            return $errors;
+        }
+        
     }
+
     function listApplications() {
      
         if (isset($_GET["id"])) {

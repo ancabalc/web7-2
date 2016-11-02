@@ -3,11 +3,15 @@ require_once "db.php";
 
 class ApplicationsModel extends DB {
     function createApplications(){
-        $sql = "SELECT * FROM applications WHERE id = 1";
+        $params = [':title' => $item["title"],
+                    ':description' => $item["description"],
+                    ':active' => $item["active"]];
+        
+        $sql = "INSERT INTO applications (`title`, `description`, `active`) ('', '', 1) ";
         $sth = $this->dbh->prepare($sql);
-        $sth->execute();
+        $sth->execute($params);
        
-        return $sth->fetchAll(PDO::FETCH_ASSOC);
+        return $this->dbh->lastInsertId();
     }
     
     function getAll() {
