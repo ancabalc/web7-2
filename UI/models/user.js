@@ -23,10 +23,10 @@ User.prototype.Login = function(email,password) {
                 }
             };
             return $.ajax(ajaxxx);
+}
 
 function Users(){
     this.models = [];
-}
 }
 
 Users.prototype.add = function(userData){
