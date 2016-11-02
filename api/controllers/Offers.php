@@ -29,4 +29,8 @@ class Offers {
         $offers = $offersModel -> getAll();
         return $offersModel->getAll();
     }
+    
+    function deleteOffers(){
+        
+    }
 }
