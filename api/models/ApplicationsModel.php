@@ -7,7 +7,7 @@ class ApplicationsModel extends DB {
                     ':description' => $item["description"],
                     ':active' => $item["active"]];
         
-        $sql = "INSERT INTO applications (`title`, `description`, `active`) ('', '', 1) ";
+        $sql = "INSERT INTO applications (`title`, `description`, `active`) ('', '', '') ";
         $sth = $this->dbh->prepare($sql);
         $sth->execute($params);
        
