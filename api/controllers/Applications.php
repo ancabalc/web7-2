@@ -31,11 +31,11 @@ class Applications {
 
     function listApplications() {
      
-        if (isset($_GET["id"])) {
+        
             $applicationsModel = new ApplicationsModel();
-            $response = $applicationsModel->getAll($_GET["id"]);
+            $response = $applicationsModel->getAll($_GET);
             return $response;
-        } 
+        
         }  
 }
       
