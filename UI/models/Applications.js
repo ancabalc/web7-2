@@ -2,7 +2,7 @@ function Applications(){
     this.models = [];
 }
 
-Articles.prototype.getApplications = function(){
+Applications.prototype.getApplications = function(){
     var that = this;
     return $.ajax({
             url:"https://web7-2-andrada17.c9users.io/api/applications/listApplications",
