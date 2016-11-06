@@ -18,6 +18,8 @@ $routes["/api/users/listUsers"] = array("controller" => "Users",
                                 "method" => "listUsers");  
 $routes["/api/offers/create"] = array("controller" => "Offers",
                                 "method" => "createOffers");  
+$routes["/api/users/get"] = array("controller" => "Users",
+                                "method" => "getUser");
 
 
 $routes["/api/applications/listApplications"] = array("controller" => "Applications",
