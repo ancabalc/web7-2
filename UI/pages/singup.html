@@ -34,6 +34,9 @@
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="favicon.ico"/>
+        <script   src="//code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
+        <script type="text/javascript" src="../models/user.js"></script>
+        <script type="text/javascript" src="../views/signup.js"></script>
     </head>
     <!-- END HEAD -->
 
@@ -124,13 +127,19 @@
                     <div class="col-md-5 col-sm-7">
                         <form>
                             <div class="margin-b-10">
-                                <input type="text" class="form-control" placeholder="Name">
+                                <input type="text" class="form-control username" placeholder="Name">
                             </div>
                             <div class="margin-b-10">
-                                <input type="text" class="form-control" placeholder="Email">
+                                <input type="text" class="form-control useremail" placeholder="Email">
                             </div>
                             <div class="margin-b-10">
-                                <input type="password" class="form-control" placeholder="Password">
+                                <input type="password" class="form-control userpassword" placeholder="Password">
+                            </div>
+                            <div class="margin-b-10">
+                                <input type="password" class="form-control userrepassword" placeholder="Reenter password">
+                            </div>
+                            <div class="margin-b-10">
+                                <input type="text" class="form-control role" placeholder="Role">
                             </div>
                             <button type="submit" class="btn-theme btn-theme-sm btn-base-bg text-uppercase">Sing up</button>
                         </form>

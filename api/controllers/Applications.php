@@ -21,21 +21,23 @@ class Applications {
             $applicationsModels = new ApplicationsModels();
             $applicationId = $applicationsModels->createApplications($_POST);
             if ($applicationId) {
-                return $applicationId; 
+                return ($_POST["title"]); 
+                return ($_POST["description"]);
+                return ($_POST["active"]);
             }
         } else {
             return $errors;
         }
         
     }
-
+     
     function listApplications() {
      
-        if (isset($_GET["id"])) {
+        
             $applicationsModel = new ApplicationsModel();
-            $response = $applicationsModel->getAll($_GET["id"]);
+            $response = $applicationsModel->getAll($_GET);
             return $response;
-        } 
+        
         }  
 }
       
