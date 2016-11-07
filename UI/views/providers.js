@@ -20,7 +20,7 @@ $(window).ready(function(){
                          "<img class='img-responsive' src='../layout/img/770x860/01.jpg' alt='Team Image'>" +
                             "</div>" +
                         "</div>" +
-                        "<h4><a href='#'>"+ providerData.name + "</a> <span class='text-uppercase margin-l-20'>" + providerData.description + "</span></h4>" +
+                        "<h4><a href='#'>"+ providerData.name + "</a> <span class='text-uppercase margin-l-20'>" + providerData.job + "</span></h4>" +
                         "<p>"+providerData.description + "</p>" +
                     "</div>";
                
