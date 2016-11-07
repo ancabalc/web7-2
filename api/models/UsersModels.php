@@ -22,10 +22,11 @@ class UsersModel extends DB{
       function updateUsers($data) {
         $params = [':id' => $data["id"],
                     ':name' => $data["name"],
+                    ':job' => $data["job"],
                     ':description' => $data["description"],
                     ':image' => $data['image']];
         
-        $sql = 'UPDATE users SET name=:name, description=:description, image=:image where id=:id';
+        $sql = 'UPDATE users SET name=:name, job=:job, description=:description, image=:image where id=:id';
         $sth = $this->dbh->prepare($sql);
         return $sth->execute($params); 
     }
