@@ -5,7 +5,7 @@ $(window).ready(function(){
         var appDescription = $('#application-description').val();
         var appActive = $('#application-active').val();
         
-        return {'title':appTitle, 'description':appDescription}
+        return {'title':appTitle, 'description':appDescription , 'active':appActive}
     }
     
     $('#saveApplication').on('click', function(){

@@ -1,9 +1,10 @@
 $(window).ready(function(){
-    var applicationsContainer = $(".js-applications-container", ".row");
+    var applicationsContainer = $(".js-applications-container .row");
     var applications = new Applications();
     
     var applicationsDef = applications.getApplications();
     applicationsDef.done(listApplications);
+    //console.log(applicationsContainer);
     
     
     function listApplications(){
@@ -23,6 +24,7 @@ $(window).ready(function(){
                         '</div>'+
                         '</div>';
             applicationsContainer.append(applicationHtml);
+            
         }
         
     }
