@@ -6,7 +6,7 @@ function Offers(){
 Offers.prototype.getOffers = function(){
     var that = this;
     return $.ajax({
-            url:"https://web7-2-jeanina.c9users.io/api/offers/create",
+            url:"https://web7-2-jeanina.c9users.io/api/offers/for-application",
             type:"POST",
             dataType:"json",
             success:function(resp){
