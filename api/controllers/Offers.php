@@ -4,8 +4,7 @@ require "models/OffersModel.php";
 
 class Offers {
     function createOffers() {
-        //  $response = validate_request();
-        //  if ($response['error']) return $response;
+
         
          $errors = array();
             if (empty($_POST["description"])) {
@@ -30,7 +29,16 @@ class Offers {
         return $offersModel->getAll();
     }
     
-    function deleteOffers(){
+    function deleteOffers($id){
+        $params = [':id' => $id];
+        $sql = 'DELETE from offers WHERE id=:id';
+        $sth = $this->dbh->prepare($sql);
+        $sth->execute($params);
+        
+        return $sth->rowCount();
         
     }
+    
+    
 }
+?>
