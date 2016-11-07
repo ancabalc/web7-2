@@ -17,12 +17,11 @@ class Users {
                         $errors['description'] = 'Description is required';
                         
                     }
-                    if(empty($_FILES["image"])){
+                    if(empty($_FILES["image"]) && !isset($_POST['image'])){
                          $errors['image'] = 'Image is required';
                     }
             if(empty($errors)){
 
-             $_POST['image'] = '';
              if(isset($_FILES["image"])){
                  $file=$_FILES["image"];
                  move_uploaded_file($file["tmp_name"],  "uploads/".$file["name"]);
@@ -51,6 +50,13 @@ class Users {
         $response = $listUsersModel->listUsers();
         return $response;
         
+    }
+      function getUser() {
+        if (isset($_GET["id"])) {
+            $usersModel = new UsersModel();
+            $response = $usersModel->getUsersById($_GET["id"]);
+            return $response;
+        } 
     }
     
 }

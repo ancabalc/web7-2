@@ -12,6 +12,12 @@ class UsersModel extends DB{
         $sth->execute($params);
         return $this->dbh->lastInsertId();
     }
+     function getUsersById($id) {
+        $sql = "select * from users where id=" . $id;
+        $sth = $this->dbh->prepare($sql);
+        $sth->execute();
+        return $sth->fetch(PDO::FETCH_ASSOC);
+    }
     
       function updateUsers($data) {
         $params = [':id' => $data["id"],
