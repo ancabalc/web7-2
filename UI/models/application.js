@@ -6,7 +6,7 @@ function application(){
 application.prototype.saveApplicationData = function(getAppValue){
     var that = this;
     return $.ajax({
-            url:"https://web7-2-raulhossu.c9users.io/web7-2/api/applications/create",
+            url:"/api/applications/create",
             type:"POST",
             dataType:"json",
             success:function(resp){

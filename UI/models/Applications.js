@@ -5,7 +5,7 @@ function Applications(){
 Applications.prototype.getApplications = function(){
     var that = this;
     return $.ajax({
-            url:"https://web7-2-andrada17.c9users.io/api/applications/listApplications",
+            url:"/api/applications/listApplications",
             type:"GET",
             dataType:"json",
             success:function(resp){

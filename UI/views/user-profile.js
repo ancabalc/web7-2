@@ -13,7 +13,7 @@ $(window).ready(function(){
         console.log(userModel.job);
         $("[name='description']").val(userModel.description);
         image = userModel.image;
-        $(".img-responsive").attr("src", 'https://preview.c9users.io/sergiu87/web7-2/api/uploads/' + userModel.image);
+        $(".img-responsive").attr("src", '/api/uploads/' + userModel.image);
         
     }
     function readURL(input) {
@@ -52,13 +52,13 @@ $("#file").change(function(){
         }
         
         $.ajax({
-            url:"https://web7-2-sergiu87.c9users.io/api/users/update?id="+id,
+            url:"/api/users/update?id="+id,
             type:"POST",
             data:formData,
             processData:false,
             contentType:false,
             success:function(resp){
-                window.location.href = "https://web7-2-sergiu87.c9users.io/UI/pages/user-profile.html";
+                window.location.href = "/UI/pages/user-profile.html";
             },
             error:function(){
                 console.log("oopsss");
