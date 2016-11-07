@@ -19,7 +19,7 @@ class Offers {
         return $offersModel->getAll();
     }
     
-    function deleteOffers($id){
+    function deleteOffer($id){
         $params = [':id' => $id];
         $sql = 'DELETE from offers WHERE id=:id';
         $sth = $this->dbh->prepare($sql);
