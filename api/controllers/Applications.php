@@ -6,7 +6,7 @@ class Applications {
     function create(){
         
         $errors = array();
-        
+    
         if (empty($_POST["title"])) {
             $errors["title"] = "Title is required";
         } 
@@ -18,12 +18,10 @@ class Applications {
         }
         
         if(empty($errors)) {
-            $applicationsModels = new ApplicationsModels();
-            $applicationId = $applicationsModels->createApplications($_POST);
-            if ($applicationId) {
-                return ($_POST["title"]); 
-                return ($_POST["description"]);
-                return ($_POST["active"]);
+            $applicationsModels = new ApplicationsModel();
+            $id = $applicationsModels->createApplications($_POST);
+            if ($id) {
+                return array("id" => $id);
             }
         } else {
             return $errors;
@@ -37,8 +35,7 @@ class Applications {
             $applicationsModel = new ApplicationsModel();
             $response = $applicationsModel->getAll($_GET);
             return $response;
-        
-        }  
-}
+        } 
+    }  
       
     

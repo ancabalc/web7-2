@@ -2,12 +2,12 @@
 require_once "db.php";
 
 class ApplicationsModel extends DB {
-    function createApplications(){
+    function createApplications($item){
         $params = [':title' => $item["title"],
                     ':description' => $item["description"],
                     ':active' => $item["active"]];
         
-        $sql = "INSERT INTO applications (`title`, `description`, `active`) ('', '', '') ";
+        $sql = "INSERT INTO applications (`title`, `description`, `active`) Values (:title, :description, :active) ";
         $sth = $this->dbh->prepare($sql);
         $sth->execute($params);
        
