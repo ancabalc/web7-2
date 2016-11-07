@@ -47,9 +47,8 @@ class Users {
          }
     
     public function listUsers () {
-        $limit = empty($_GET['items']) ? 0 : $_GET['items'];
         $listUsersModel = new UsersModel();
-        $response = $listUsersModel->listUsers($limit);
+        $response = $listUsersModel->listUsers();
         return $response;
         
     }
