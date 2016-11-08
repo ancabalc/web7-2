@@ -52,7 +52,7 @@ $("#file").change(function(){
         }
         
         $.ajax({
-            url:"https://web7-2-sergiu87.c9users.io/api/users/update?id="+id,
+            url:"/api/users/update?id="+id,
             type:"POST",
             data:formData,
             processData:false,
