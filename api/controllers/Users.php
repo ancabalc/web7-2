@@ -13,6 +13,9 @@ class Users {
                         $errors['name'] = 'Name is required';
                         
                     }
+                    if(empty($_POST["job"])){
+                        $errors['job']='Job is required';
+                    }
                     if(empty($_POST["description"])) {
                         $errors['description'] = 'Description is required';
                         

@@ -3,12 +3,12 @@
 require "models/OffersModel.php";
 
 class Offers {
-    function createOffers() {
+    function createOffer() {
 
         
          if (!empty($_POST["description"])){
            $offersModel = new OffersModel();
-           $id = $offersModel -> createOffers($_POST);
+           $id = $offersModel -> createOffer($_POST);
            return array("id" =>$id);
            
        }

@@ -9,7 +9,7 @@ function User(options){
 User.prototype.Login = function(email,password) {
             
             var ajaxxx = {
-                url:"https://web7-2-dabija999.c9users.io/api/accounts/login",
+                url:"/api/accounts/login",
                 data:{
                     login_email:loginEmail,
                     login_password:loginPassword
@@ -23,4 +23,25 @@ User.prototype.Login = function(email,password) {
                 }
             };
             return $.ajax(ajaxxx);
+}
+
+function Users(){
+    this.models = [];
+}
+
+Users.prototype.add = function(userData){
+    var that= this;
+    $.ajax({
+            url:"/api/accounts/create",
+            data:userData,
+            dataType:"json",
+            type:"POST",
+            success:function(){
+                that.model = userData;
+                window.location.href ="/UI/pages/index.html";
+            },
+           error:function(xhr,status,errorMessage){
+                console.log("Error status:"+status);
+            }
+        });
 }

@@ -27,7 +27,7 @@ Users.prototype.save = function(formData){
             success:function(resp){
                     if (Object.keys(resp.errors).length === 0){
                         window.location.href = "index.html";
-                    }
+                    };
             },
             error:function(xhr,status,errorMessage){
                 console.log("Error status:"+status);
