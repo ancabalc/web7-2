@@ -1,5 +1,4 @@
 <?php
-
 class Accounts {
     
     function create(){
@@ -28,6 +27,23 @@ class Accounts {
             if (($_POST["role"] !== "client") && ($_POST["role"] !== "provider")){
                 $errors["role"] = "Choose a proper role";    
             }
+            
+            if (($_POST["role"] === "provider") && (empty($_POST["job"]))) {
+                $errors["job"] = "Choose a job that you're providing";
+            }
+            
+            if (empty($_POST["description"])) {
+                $errors["description"] = "Description is required";    
+            }
+            
+            if (isset($_FILES["file"])) {
+                $file = $_FILES["file"];
+                move_uploaded_file($file["tmp_name"],  "uploads/".$file["name"]);
+                $_POST["image"] = $file["name"];
+            } else {
+                $errors["image"] = "Choose an image, please";
+            }
+            
             
             if (empty($errors)) {
                 $_POST["password"] = password_hash($_POST["password"], PASSWORD_DEFAULT);
