@@ -118,16 +118,16 @@
             <div class="content-md container">
                 <div class="row margin-b-40">
                     <div class="col-sm-6">
-                        <h2>Sing up</h2>
+                        <h2>Sign up</h2>
                     </div>
                 </div>
                 <!--// end row -->
     
                 <div class="row">
                     <div class="col-md-5 col-sm-7">
-                        <form>
+                        <form  method="POST">
                             <div class="margin-b-10">
-                                <input type="text" class="form-control username" placeholder="Name">
+                                <input type="text" name= "name" class="form-control username" placeholder="Name">
                             </div>
                             <div class="margin-b-10">
                                 <input type="text" class="form-control useremail" placeholder="Email">
@@ -136,12 +136,25 @@
                                 <input type="password" class="form-control userpassword" placeholder="Password">
                             </div>
                             <div class="margin-b-10">
-                                <input type="password" class="form-control userrepassword" placeholder="Reenter password">
+                                <input type="password" class="form-control userrepassword" placeholder="Repassword">
+                            </div>
+                            
+                            <div class="margin-b-10">
+                              <input type="radio" name="rolec" class="role" value="client" checked> Client<br>
+                              <input type="radio" name="rolec" class="role" value="provider"> Provider<br>
+                            </div>
+                    
+                            <div class="margin-b-10">
+                                <input type="text" class="form-control job" placeholder="Job" style="display:none;">
+                            </div>
+                            
+                            <div class="margin-b-10">
+                                <input type="text" class="form-control description" placeholder="Descriere">
                             </div>
                             <div class="margin-b-10">
-                                <input type="text" class="form-control role" placeholder="Role">
+                                <input type="file" class="form-control image" name="image" placeholder="Avatar">
                             </div>
-                            <button type="submit" class="btn-theme btn-theme-sm btn-base-bg text-uppercase">Sing up</button>
+                            <button type="submit" class="btn-theme btn-theme-sm btn-base-bg text-uppercase">Sign up</button>
                         </form>
                     </div>
                 </div>

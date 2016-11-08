@@ -4,7 +4,7 @@ function Users(){
 Users.prototype.getUser = function(userId){
     var that= this;
     return $.ajax({
-            url:"https://web7-2-sergiu87.c9users.io/api/users/get?id="+userId,
+            url:"/api/users/get?id="+userId,
             type:"GET",
             dataType:"json",
             success:function(resp){
@@ -17,20 +17,19 @@ Users.prototype.getUser = function(userId){
         });
 }
 
-Users.prototype.add = function(userData){
+Users.prototype.save = function(formData){
     $.ajax({
-            url:"https://web7-2-danciocoiu.c9users.io/api/accounts/create",
-            data:userData,
-            dataType:"json",
+            url:"/api/accounts/create",
             type:"POST",
+            data:formData,
+            processData:false,
+            contentType:false,
             success:function(resp){
-                 if (Object.keys(resp.errors).length === 0) {
-                     window.location.href ="https://web7-2-danciocoiu.c9users.io/UI/pages/index.html";
-                } else {
-                    console.log(resp.errors);
-                }
-           },
-           error:function(xhr,status,errorMessage){
+                    if (Object.keys(resp.errors).length === 0){
+                        window.location.href = "index.html";
+                    };
+            },
+            error:function(xhr,status,errorMessage){
                 console.log("Error status:"+status);
             }
         });

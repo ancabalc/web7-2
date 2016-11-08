@@ -1,17 +1,21 @@
 <?php
 require "db.php";
 class UsersModel extends DB{
-
       function createUser($user){
         $params = [':name' => $user["name"],
                     ':email' => $user["email"],
                     ':password' => $user["password"],
-                    ':role' => $user["role"]];
-        $sql = 'INSERT INTO users(name, email, password, role) VALUES (:name, :email, :password, :role)';
+                    ':role' => $user["role"],
+                    ':job' => $user["job"],
+                    ':description' => $user["description"],
+                    ':image' => $user["image"]
+                    ];
+        $sql = 'INSERT INTO users(name, email, password, role, job, description, image) VALUES (:name, :email, :password, :role, :job, :description, :image)';
         $sth = $this->dbh->prepare($sql);
         $sth->execute($params);
         return $this->dbh->lastInsertId();
     }
+    
      function getUsersById($id) {
         $sql = "select * from users where id=" . $id;
         $sth = $this->dbh->prepare($sql);
@@ -38,12 +42,9 @@ class UsersModel extends DB{
         $sth -> execute();
         return $sth->fetchAll(PDO::FETCH_ASSOC);
       }
-
-
       function loginUser($email) {
         
         $params = [':email' => $email];
-
         $sql = 'SELECT * FROM users WHERE email = :email';
         $sth = $this->dbh->prepare($sql);
         $sth->execute($params);

@@ -1,21 +1,23 @@
-function Applications(){
+/*global $*/
+function Offers(){
     this.models = [];
 }
 
-Applications.prototype.getApplications = function(){
+Offers.prototype.getOffers = function(){
     var that = this;
     return $.ajax({
-            url:"/api/applications/listApplications",
-            type:"GET",
+            url:"https://web7-2-jeanina.c9users.io/api/offers/for-application",
+            type:"POST",
             dataType:"json",
             success:function(resp){
                 for(var i = 0; i<resp.length; i++){
-                       var application = new Application(resp[i]);
-                       that.models.push(application);
+                       var offer = new Offer(resp[i]);
+                       that.models.push(offer);
                 }
             },
             error:function(xhr,status,errorMessage){
                 console.log("Error status:"+status);
             }
     });
-};
+}
+
