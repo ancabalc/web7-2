@@ -7,13 +7,13 @@ $(window).ready(function(){
     offersDef.done(listOffers);
     
     
-    function getValues() {
-        var appTitle = $('#application-title').val();
-        var appDescription = $('#application-description').val();
-        var appActive = $('#application-active').val();
+    // function getValues() {
+    //     var appTitle = $('#application-title').val();
+    //     var appDescription = $('#application-description').val();
+    //     var appActive = $('#application-active').val();
         
-        return {'title':appTitle, 'description':appDescription}
-    }
+    //     return {'title':appTitle, 'description':appDescription}
+    // }
     
    
     function listOffers(){
