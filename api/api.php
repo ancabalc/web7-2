@@ -10,14 +10,19 @@ $routes["/api/applications/create"] = array("controller" =>"Applications",
                                       "method" => "create");
 $routes["/api/accounts/create"] = array("controller" => "Accounts",
                                 "method" => "create");
+                                
 $routes["/api/accounts/login"] = array("controller" => "Accounts",
                                 "method" => "login");
+                                
 $routes["/api/users/update"] =  array("controller" => "Users",
                                 "method" => "updateUsers");
+                                
 $routes["/api/users/listUsers"] = array("controller" => "Users",
-                                "method" => "listUsers");  
+                                "method" => "listUsers"); 
+                                
 $routes["/api/offers/create"] = array("controller" => "Offers",
-                                "method" => "createOffer");  
+                                "method" => "createOffer"); 
+                                
 $routes["/api/offers/submit-offer"] = array("controller" => "Offers",
                                                "method" => "listOffers");
                                 
