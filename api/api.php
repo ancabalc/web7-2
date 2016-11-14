@@ -21,18 +21,25 @@ $routes["/api/users/listUsers"] = array("controller" => "Users",
                                 "method" => "listUsers"); 
                                 
 $routes["/api/offers/create"] = array("controller" => "Offers",
+
                                 "method" => "createOffer"); 
                                 
 $routes["/api/offers/submit-offer"] = array("controller" => "Offers",
                                                "method" => "listOffers");
                                 
+
 $routes["/api/users/get"] = array("controller" => "Users",
                                 "method" => "getUser");
 
 
 $routes["/api/applications/listApplications"] = array("controller" => "Applications",
                                 "method" => "listApplications");
-
+$routes["/api/accounts/getProfileData"] = array("controller" => "Accounts",
+                                "method" => "getProfileData");                                 
+$routes["/api/session"] = array("controller" => "Accounts",
+                                "method" => "checkSession");  
+                                
+                                
 if (isset($_SERVER["REDIRECT_URL"])) {
     $key = rtrim($_SERVER['REDIRECT_URL'], '/');
     //$key = $_SERVER["REDIRECT_URL"];

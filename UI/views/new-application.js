@@ -5,11 +5,13 @@ $(window).ready(function(){
         var appDescription = $('#application-description').val();
         var appActive = $('#application-active').val();
         
-        return {'title':appTitle, 'description':appDescription , 'active':appActive}
+        return {'title':appTitle, 'description':appDescription , 'active':appActive};
     }
     
-    $('#saveApplication').on('click', function(){
+    $('#saveApplication').on('click', function(e){
+        e.preventDefault();
         var getAppValues = getValues();
-        window.location = "applications.html";
+        var application = new Application();
+        application.saveApplicationData(getAppValues);
     });
 });

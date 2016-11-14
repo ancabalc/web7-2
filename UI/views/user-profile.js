@@ -1,7 +1,8 @@
 $(window).ready(function(){
+   
+    
     var users = new Users();
-    var id = 1;
-    var userDef = users.getUser(id);
+    var userDef = users.getProfileData();
     userDef.done(populateUser);
     var image = null;
     
@@ -13,7 +14,7 @@ $(window).ready(function(){
         console.log(userModel.job);
         $("[name='description']").val(userModel.description);
         image = userModel.image;
-        $(".img-responsive").attr("src", '/api/uploads/' + userModel.image);
+        $(".img-responsive").attr("src", 'https://preview.c9users.io/sergiu87/web7-2/api/uploads/' + userModel.image);
         
     }
     function readURL(input) {

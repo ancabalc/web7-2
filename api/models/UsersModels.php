@@ -51,4 +51,5 @@ class UsersModel extends DB{
        
         return $sth->fetch(PDO::FETCH_ASSOC);
     }
-    }
+}
+    
