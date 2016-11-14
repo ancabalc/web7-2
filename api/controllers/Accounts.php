@@ -100,4 +100,13 @@ class Accounts {
         return array("errors" => $errors);
     }  
       
+       function getProfileData() {
+           $_SESSION["isLogged"] = true;
+           $_SESSION["user"] = array('id'=>2);
+            validate_request();
+            require "models/UsersModels.php";
+            $usersModel = new UsersModel();
+            return array("logged"=>TRUE, "user" => $usersModel->getUsersById($_SESSION["user"]['id']));   
+
+    }
 }
