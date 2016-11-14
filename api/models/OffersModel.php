@@ -1,5 +1,8 @@
 <?php
 
+// 
+
+
 require_once "db.php";
 
 class OffersModel extends DB {
@@ -16,29 +19,12 @@ class OffersModel extends DB {
         return $this->dbh->lastInsertId();
     } 
     
-    function deleteOffer(){
-           
-        if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
-            $offerssModel = new OffersModel();
-            $id = $offersModel->deleteOffer($_GET["id"]);
-            
-            if ($id == 0) {
-                $response = array("error"=>"Offer not found");    
-            }
-            else {
-                $response = array("success"=>TRUE);         
-            }
-            return $response;
-        }
-     }
-     
-     function listOffers(){
-        $sql = "SELECT * FROM offers WHERE application_id=:application_id'";
+    function getOffersById($id) {
+        $sql = 'SELECT * FROM offers WHERE application_id=' . $id;
         $sth = $this->dbh->prepare($sql);
         $sth->execute();
-       
-        return $sth->fetchAll(PDO::FETCH_ASSOC);  
-     }
+        return $sth->fetchALL(PDO::FETCH_ASSOC);
+    }
     
 }
 ?>
