@@ -1,4 +1,4 @@
-
+<?php
 
 // require "models/OffersModel.php";
 
@@ -23,7 +23,7 @@
 // }
 //
 
-<?php
+
 
 require "models/OffersModel.php";
 
@@ -39,9 +39,8 @@ class Offers {
             if (empty($_POST["application_id"])) {
                 $errors["application_id"] = " Application Id is invalid";   
             };
-            if (empty($_POST["user_id"])) {
-                $errors["user_id"] = " User Id invalid";   
-            };
+            $_POST['user_id'] = $_SESSIO['user']['id'];
+
             if (empty($errors)) {
                 $offersModel = new OffersModel();
                 $id = $offersModel -> createOffer($_POST);

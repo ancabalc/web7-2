@@ -1,12 +1,12 @@
 /*global $*/
 $(window).ready(function(){
     
-    var offer = new Offer(1);
-    var offersDef = offer.getOffers(1);
+    var offers = new Offers(1);
+    var offersDef = offers.getOffers(1);
     offersDef.done(listOffers);
     
     function listOffers() {
-        var offersModels = offer.models;
+        var offersModels = offers.models;
         for(var i=0;i<offersModels.length;i++) {
             var offerHtml = "<h2>name</h2>" +
             "<p class='offerDesc'>" + offersModels[i].desc + " </p>";

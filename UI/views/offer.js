@@ -1,4 +1,5 @@
  /*global $*/
+ /*global Offer*/
 $(window).ready(function(){
 //     //add event listener pt butonul de add offer
 //     var offersContainer = $(".offers-js");
@@ -7,17 +8,20 @@ $(window).ready(function(){
 //     offersDef.done();
 
     function getOfferValues() {
-        var applicationId = $('#application_id').val();
-        var descriptionText = $('#description').val();
-        var userId = $('#user_id').val();
+        var applicationId = 1;//$('#application_id').val();
+        var descriptionText = $('textarea[name=description]').val();
         
-        return {'application_id':applicationId, 'description':descriptionText , 'user_id':userId}
+        return {'application_id':applicationId, 'description':descriptionText}
         
     }
     
-    $('#saveOffer').on('click', function(){
-        var getOfferValues = getOfferValues();
-        window.location = "submit_offer.html";
+    $('#saveOffer').on('click', function(e){
+        e.preventDefault();
+        var options = getOfferValues();
+        //window.location = "submit_offer.html";
+        var offer = new Offer(options);
+        var offerDef = offer.createOffer(options);
+        
     });
     
 });

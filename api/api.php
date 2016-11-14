@@ -24,8 +24,10 @@ $routes["/api/offers/create"] = array("controller" => "Offers",
 
                                 "method" => "createOffer"); 
                                 
-$routes["/api/offers/submit-offer"] = array("controller" => "Offers",
-                                               "method" => "listOffers");
+$routes["/api/offers"] = array("controller" => "Offers",
+                        "method" => "listOffers");
+                                               
+                                               
                                 
 
 $routes["/api/users/get"] = array("controller" => "Users",
