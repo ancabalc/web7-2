@@ -35,7 +35,7 @@ class Applications {
             $applicationsModel = new ApplicationsModel();
             $response = $applicationsModel->getAll($_GET);
             return $response;
-        } 
-    }  
+    } 
+}  
       
     
