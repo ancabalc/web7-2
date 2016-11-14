@@ -18,7 +18,7 @@ Offer.prototype.add = function addOffer (text,userId){
         var descriptiontText = offerHtml.children("textarea").val();
         
         return $.ajax({
-                url:"https://web7-2-jeanina.c9users.io/api/offers/create",
+                url:"../api/offers/create",
                 data:{
                     application_id:applicationId,
                     description:descriptiontText,
