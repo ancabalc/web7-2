@@ -37,19 +37,19 @@ Users.prototype.save = function(formData){
 Users.prototype.getProfileData = function(){
     var that= this;
     return $.ajax({
+        
             url:"/api/accounts/getProfileData",
             type:"GET",
             dataType:"json",
             success:function(resp){
                 var user = new User(resp.user);
                 that.model = user;
-                if(user.role==='provider'){
-                
-                    //window.location.href = "provider.html";    
-                }else {
-                    //window.location.href = "client.html";
-                }
+                if(user.role==='client'){
+                     window.location.href = "client.html";
+        }
+          
             },
+            
             error:function(xhr,status,errorMessage){
                 if(xhr.status == 401) {
                     

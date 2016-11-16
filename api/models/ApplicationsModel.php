@@ -28,4 +28,11 @@ class ApplicationsModel extends DB {
         $sth->execute();
         return $sth->fetch(PDO::FETCH_ASSOC);
     }
+    function search($value) {
+        $sql = 'SELECT title, description FROM applications WHERE active = 1 and (title like "%'. $value .'%" or description like "%'. $value .'%")';
+        $sth = $this->dbh->prepare($sql);
+        $sth->execute();
+       
+        return $sth->fetchAll(PDO::FETCH_ASSOC);   
+    }
 }

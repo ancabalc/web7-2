@@ -32,6 +32,8 @@ $routes["/api/offers"] = array("controller" => "Offers",
 
 $routes["/api/users/get"] = array("controller" => "Users",
                                 "method" => "getUser");
+$routes["/api/applications/search"] = array("controller" => "Applications",
+                                "method" => "search");
 
 
 $routes["/api/applications/listApplications"] = array("controller" => "Applications",
