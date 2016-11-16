@@ -36,6 +36,14 @@ class Applications {
             $response = $applicationsModel->getAll($_GET);
             return $response;
         } 
+        
+    function search() {
+        if (isset($_GET["value"])) {
+            $applicationsModel = new ApplicationsModel();
+            $response = $applicationsModel->search($_GET["value"]);
+            return $response;
+        } 
+    }    
     }  
       
     
