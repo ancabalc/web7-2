@@ -8,7 +8,7 @@ function Offers(options) {
 Offers.prototype.getOffers = function(applicationId) {
     var that = this;
     return $.ajax({
-            url:"/api/offers?id="+applicationId,
+            url:"/api/offers",
             type:"GET",
             dataType:"json",
             success:function(resp){
