@@ -10,14 +10,26 @@ $routes["/api/applications/create"] = array("controller" =>"Applications",
                                       "method" => "create");
 $routes["/api/accounts/create"] = array("controller" => "Accounts",
                                 "method" => "create");
+                                
 $routes["/api/accounts/login"] = array("controller" => "Accounts",
                                 "method" => "login");
+                                
 $routes["/api/users/update"] =  array("controller" => "Users",
                                 "method" => "updateUsers");
+                                
 $routes["/api/users/listUsers"] = array("controller" => "Users",
-                                "method" => "listUsers");  
+                                "method" => "listUsers"); 
+                                
 $routes["/api/offers/create"] = array("controller" => "Offers",
-                                "method" => "createOffers");  
+
+                                "method" => "createOffer"); 
+                                
+$routes["/api/offers"] = array("controller" => "Offers",
+                        "method" => "listOffers");
+                                               
+                                               
+                                
+
 $routes["/api/users/get"] = array("controller" => "Users",
                                 "method" => "getUser");
 $routes["/api/applications/search"] = array("controller" => "Applications",
@@ -30,6 +42,8 @@ $routes["/api/accounts/getProfileData"] = array("controller" => "Accounts",
                                 "method" => "getProfileData");                                 
 $routes["/api/session"] = array("controller" => "Accounts",
                                 "method" => "checkSession");  
+                                
+                                
 if (isset($_SERVER["REDIRECT_URL"])) {
     $key = rtrim($_SERVER['REDIRECT_URL'], '/');
     //$key = $_SERVER["REDIRECT_URL"];

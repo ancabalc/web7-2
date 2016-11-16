@@ -5,6 +5,7 @@ $(window).ready(function(){
     var userDef = users.getProfileData();
     userDef.done(populateUser);
     var image = null;
+    var id ;
     
     function populateUser(){
         var userModel = users.model;
@@ -14,6 +15,7 @@ $(window).ready(function(){
         console.log(userModel.job);
         $("[name='description']").val(userModel.description);
         image = userModel.image;
+        id = userModel.id;
         $(".img-responsive").attr("src", 'https://preview.c9users.io/sergiu87/web7-2/api/uploads/' + userModel.image);
         
     }
@@ -34,7 +36,7 @@ $("#file").change(function(){
     
     $("[type='submit']").on("click",function(ev){
         ev.preventDefault();
- 
+          
         
         var formData = new FormData();
         var nameValue = $("[name='name']").val();

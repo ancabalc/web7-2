@@ -1,17 +1,18 @@
 /* global $ */
-function application(){
+function Application(){
     this.models = [];
 }
 
-application.prototype.saveApplicationData = function(getAppValue){
+Application.prototype.saveApplicationData = function(getAppValue){
     var that = this;
     return $.ajax({
-            url:"/api/applications/create",
+            url:"../../api/applications/create",
             type:"POST",
             dataType:"json",
+            data:getAppValue,
             success:function(resp){
                 for(var i = 0; i<resp.length; i++){
-                       var app = new application(resp[i]);
+                       var app = new Application(resp[i]);
                        that.models.push(app);
                 }
             },
@@ -19,4 +20,4 @@ application.prototype.saveApplicationData = function(getAppValue){
                 console.log("Error status:"+status);
             }
     });
-}
+};
