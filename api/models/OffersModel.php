@@ -20,7 +20,7 @@ class OffersModel extends DB {
     } 
     
     function getOffersById($id) {
-        $sql = 'SELECT * FROM offers WHERE application_id=' . $id;
+        $sql = 'SELECT * FROM offers WHERE application_id=1 ' . $id;
         $sth = $this->dbh->prepare($sql);
         $sth->execute();
         return $sth->fetchALL(PDO::FETCH_ASSOC);
