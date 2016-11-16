@@ -1,38 +1,28 @@
-
 /*global $*/
-
-function Offer (options){
-    //functie constructor ...seteaza date initiale
-    this.description = options.description;
-    this.application_id = options.application_id;
-    this.user_id = options.user_id;
-    
+function Offer(options) {
+    this.applicationId = options.application_id;
+    this.desc = options.description;
+    this.models = [];
 }
 
-Offer.prototype.add = function addOffer (text,userId){
-    // do an Ajax to add an offer https://preview.c9users.io/siitwebcluj/web7-2/UI/pages/submit-offer.html
-    //Method Post
-        var offerHtml = $(this).parent('li');
-        var applicationId = offerHtml.data("application_id");
-        var userId = offerHtml.data("user_id");
-        var descriptiontText = offerHtml.children("textarea").val();
-        
-        return $.ajax({
-                url:"../api/offers/create",
-                data:{
-                    application_id:applicationId,
-                    description:descriptiontText,
-                    user_id:userId,
-                },
-            type: "POST",
-            success:function(){
-                addOffer();
-                console.log("Your offer was successfully added!");
+Offer.prototype.createOffer = function(options) {
+    var that = this;
+    return $.ajax({
+            url:"/api/offers/create",//+applicationId,
+            type:"POST",
+            dataType:"json",
+            data: options,
+            success:function(resp){
+                //console.log(resp);
+                that.models = [];
+                for(var i = 0; i<resp.length; i++){
+                    var offers = new Offer(resp[i]);
+                    that.models.push(offers);
+                }
+                //console.log('Offers:' , that.models);
             },
-            error:function(){
-                console.log("Error!! Your offer was not added!");
+            error:function(xhr,status,errorMessage){
+                console.log("Error status:"+status);
             }
-            
         });
-        
-    }
+};

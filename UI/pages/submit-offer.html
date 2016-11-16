@@ -133,6 +133,9 @@
                 </div>
             </div>
             <!--// end row -->
+            <div class="list-offers">
+                
+            </div>
         </div>
         <div class="section-seperator offers-js">
             <!--<div class="content-md container">-->
@@ -155,6 +158,8 @@
             <!--        </div>-->
             <!--    </div>-->
                 <!--// end row -->
+                
+              
                 <div class="section-seperator">
                     <div class="content-md container">
                         <div class="row margin-b-40">
@@ -168,9 +173,9 @@
                             <div class="col-md-5 col-sm-7">
                                 <form>
                                     <div class="margin-b-10">
-                                        <textarea class="form-control" placeholder="Your offer here...."></textarea>
+                                        <textarea class="form-control" placeholder="Your offer here...." name="description"></textarea>
                                     </div>
-                                    <button type="submit" class="btn-theme btn-theme-sm btn-base-bg text-uppercase">Submit</button>
+                                    <button type="submit" class="btn-theme btn-theme-sm btn-base-bg text-uppercase " id="saveOffer">Submit</button>
                                 </form>
                             </div>
                         </div>
@@ -267,8 +272,11 @@
         
         
                 <!-- Scripts JS -->
+        <script   src="//code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
+
         <script type="text/javascript" src="../models/Offer.js"></script>
         <script type="text/javascript" src="../models/Offers.js"></script>
+        <script type="text/javascript" src="../views/offer.js"></script>
         <script type="text/javascript" src="../views/offers.js"></script>
 
     </body>

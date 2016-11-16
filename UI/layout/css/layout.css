@@ -1150,3 +1150,16 @@ fieldset[disabled] .btn-theme {
 .height-300 {
   height: 300px !important;
 }
+/*--------------------------------------------------
+    [search button]
+----------------------------------------------------*/
+.button-search{
+                 background-image:url('/imagesStatic/searchIcon.png');
+                 width:70px;
+                 height:30px;
+                         }
+.app-look{
+  background-color: blue;
+  border-radius:5%;
+  
+}
