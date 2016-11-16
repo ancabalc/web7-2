@@ -46,10 +46,10 @@ Users.prototype.getProfileData = function(){
                 that.model = user;
                 if(user.role==='client'){
                      window.location.href = "client.html";
-        }
-          
+                    
+            }
             },
-            
+          
             error:function(xhr,status,errorMessage){
                 if(xhr.status == 401) {
                     

@@ -102,7 +102,7 @@ class Accounts {
       
        function getProfileData() {
            $_SESSION["isLogged"] = true;
-           $_SESSION["user"] = array('id'=>2);
+           $_SESSION["user"] = array('id'=>3);
             validate_request();
             require "models/UsersModels.php";
             $usersModel = new UsersModel();
