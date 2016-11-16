@@ -26,8 +26,6 @@ $routes["/api/applications/listApplications"] = array("controller" => "Applicati
                                 "method" => "listApplications");
 $routes["/api/accounts/getProfileData"] = array("controller" => "Accounts",
                                 "method" => "getProfileData");                                 
-$routes["/api/session"] = array("controller" => "Accounts",
-                                "method" => "checkSession");  
 if (isset($_SERVER["REDIRECT_URL"])) {
     $key = rtrim($_SERVER['REDIRECT_URL'], '/');
     //$key = $_SERVER["REDIRECT_URL"];
