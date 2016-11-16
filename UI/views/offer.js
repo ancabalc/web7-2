@@ -19,9 +19,12 @@ $(window).ready(function(){
         e.preventDefault();
         var options = getOfferValues();
         //window.location = "submit_offer.html";
-        var offer = new Offer(options);
+        var offer = new Offers();
         var offerDef = offer.createOffer(options);
-        
+        offerDef.done(function(){
+            window.location.href = "https://web7-2-jeanina.c9users.io/UI/pages/submit-offer.html"
+        });
     });
+    
     
 });
